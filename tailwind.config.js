@@ -1,5 +1,3 @@
-tailwind.config.js
-javascript
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -9,36 +7,38 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['Inter', 'system-ui', 'sans-serif'],
+      },
       colors: {
-        primary: {
-          50: '#e6f7ff',
-          100: '#bae7ff',
-          200: '#91d5ff',
-          300: '#69c0ff',
-          400: '#40a9ff',
-          500: '#4A90B8',
-          600: '#3d7ba8',
-          700: '#2f6597',
-          800: '#225087',
-          900: '#1a3f6b',
-        },
-        secondary: {
-          50: '#f0f9f4',
-          100: '#dcf4e6',
-          200: '#bbe9d0',
-          300: '#86d9b0',
-          400: '#4bc589',
-          500: '#22c55e',
-          600: '#16a34a',
-          700: '#15803d',
-          800: '#166534',
-          900: '#14532d',
+        'conference': {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
         }
       },
-      fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+      animation: {
+        'float': 'float 3s ease-in-out infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'bounce-slow': 'bounce 2s infinite',
       },
+      backgroundImage: {
+        'hero-gradient': 'linear-gradient(135deg, rgba(59, 130, 246, 0.9) 0%, rgba(139, 92, 246, 0.8) 50%, rgba(236, 72, 153, 0.9) 100%)',
+        'card-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
+      },
+      backdropBlur: {
+        xs: '2px',
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

@@ -5,8 +5,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'ICAIH 2025 - International Conference on Artificial Intelligence in Healthcare',
-  description: 'Join us for ICAIH 2025 at St Aloysius (Deemed to be University) Institute of Management and IT, focusing on advanced AI technologies in healthcare.',
+  title: 'ICAIH 2025 - International Conference on Artificial Intelligence in Health Care',
+  description: 'International Conference on Artificial Intelligence in Health Care at St Aloysius Institute',
 }
 
 export default function RootLayout({
@@ -16,9 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {children}
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }

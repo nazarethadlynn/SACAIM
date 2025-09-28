@@ -1,18 +1,30 @@
-import HeroBanner from '@/components/sections/Hero/HeroBanner'
-import AboutConference from '@/components/sections/About/AboutConference'
-import ConferenceTracks from '@/components/sections/About/ConferenceTracks'
-import SpeakerGrid from '@/components/sections/Speakers/SpeakerGrid'
-import ImportantDates from '@/components/sections/Dates/ImportantDates'
+import Navigation from '@/components/Navigation'
+import Hero from '@/components/Hero'
+import AboutUniversity from '@/components/AboutUniversity'
+import AboutConference from '@/components/AboutConference'
+import ConferenceTopics from '@/components/ConferenceTopics'
+import ConferenceChair from '@/components/ConferenceChair'
+import KeynoteSpeakers from '@/components/KeynoteSpeakers'
+import ImportantDates from '@/components/ImportantDates'
+import Conveners from '@/components/Conveners'
+import Contact from '@/components/Contact'
+import Footer from '@/components/Footer'
+
 
 export default function Home() {
   return (
-    <>
-      <HeroBanner />
+    <main>
+      <Navigation />
+      <Hero />
+      <AboutUniversity />
       <AboutConference />
-      <ConferenceTracks />
-      <SpeakerGrid />
+      <ConferenceTopics />
+      <ConferenceChair />
+      <KeynoteSpeakers />
       <ImportantDates />
-    </>
+      <Conveners />
+      <Contact />
+      <Footer />
+    </main>
   )
 }
- 
