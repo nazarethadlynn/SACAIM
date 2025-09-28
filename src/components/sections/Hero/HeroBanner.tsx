@@ -2,11 +2,11 @@
 const HeroBanner = () => {
   return (
     <div className="relative h-screen w-full flex items-center justify-center">
-      {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black bg-opacity-30 z-10" />
+      {/* Rich overlay for better text visibility */}
+      <div className="hero-overlay" />
       
-      {/* Content with centered styling */}
-      <div className="relative z-20 center-content">
+      {/* Hero content - combines both approaches */}
+      <div className="relative z-20 hero-content">
         {/* ICAIH Logo/Icon */}
         <div className="inline-flex items-center justify-center w-20 h-20 bg-green-600 bg-opacity-20 rounded-full mb-6 border-2 border-green-400">
           <div className="text-green-400 text-3xl font-bold">I</div>
@@ -15,9 +15,9 @@ const HeroBanner = () => {
         <h1>
           INTERNATIONAL CONFERENCE ON
           <br />
-          <span className="text-blue-300">ARTIFICIAL INTELLIGENCE</span>
+          <span className="text-blue-gradient">ARTIFICIAL INTELLIGENCE</span>
           <br />
-          <span className="text-blue-200">IN HEALTH CARE</span>
+          <span className="text-blue-gradient">IN HEALTH CARE</span>
         </h1>
         
         <h2>(ICAIH-2025)</h2>
@@ -28,12 +28,10 @@ const HeroBanner = () => {
           INSTITUTE OF MANAGEMENT AND IT
         </h3>
         
-        <p style={{ fontSize: '1.25rem', fontWeight: '600', color: '#10b981', textShadow: '1px 1px 2px rgba(0,0,0,0.3)' }}>
-          20TH & 21ST, MARCH, 2025
-        </p>
+        <p>20TH & 21ST, MARCH, 2025</p>
         
         {/* Enhanced Springer Logo */}
-        <div className="springer-logo" style={{ background: 'white', color: '#1f2937' }}>
+        <div className="springer-logo">
           <div className="springer-text">
             📚 Springer
             <span className="ccis-badge">CCIS</span>
@@ -44,20 +42,22 @@ const HeroBanner = () => {
         </div>
         
         {/* Call-to-Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105">
+        <div className="cta-buttons">
+          <button className="btn-primary">
             Register Now
           </button>
-          <button className="border-2 border-white text-white hover:bg-white hover:text-blue-900 font-bold py-3 px-8 rounded-lg transition-all duration-300">
+          <button className="btn-secondary">
             Download Brochure
           </button>
         </div>
-        
-        {/* Scroll down indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
-          </div>
+      </div>
+      
+      {/* Scroll down indicator */}
+      <div className="scroll-indicator">
+        <div className="scroll-arrow">
+          <svg width="16" height="16" fill="white" viewBox="0 0 24 24">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg>
         </div>
       </div>
     </div>
