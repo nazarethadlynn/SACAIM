@@ -1,59 +1,61 @@
-import React from 'react'
-import { ArrowDown } from 'lucide-react'
-
+// src/components/sections/Hero/HeroBanner.tsx
 const HeroBanner = () => {
   return (
-    <section className="relative min-h-screen bg-gradient flex items-center">
-      {/* Background Image Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-        style={{
-          backgroundImage: 'url(/images/hero/university-campus.jpg)'
-        }}
-      />
+    <div className="relative h-screen w-full flex items-center justify-center">
+      {/* Remove the background-image style from here since it's now global */}
       
-      <div className="relative z-10 container mx-auto px-4 text-center text-white">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-shadow">
-          INTERNATIONAL CONFERENCE ON ARTIFICIAL
-          <br />
-          <span className="text-5xl md:text-7xl">INTELLIGENCE</span>
-          <br />
-          <span className="text-4xl md:text-6xl">IN HEALTH CARE</span>
-        </h1>
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black bg-opacity-40 z-10" />
+      
+      {/* Content */}
+      <div className="relative z-20 text-center text-white px-4 max-w-6xl">
+        <div className="mb-8">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-white bg-opacity-10 rounded-full mb-6">
+            <div className="text-green-400 text-3xl font-bold">I</div>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl leading-tight">
+            INTERNATIONAL CONFERENCE ON
+            <br />
+            <span className="text-blue-300">ARTIFICIAL INTELLIGENCE</span>
+            <br />
+            <span className="text-blue-200">IN HEALTH CARE</span>
+          </h1>
+        </div>
         
-        <div className="text-3xl md:text-4xl font-bold mb-8 text-blue-200">
+        <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-blue-100">
           (ICAIH-2025)
-        </div>
+        </h2>
         
-        <div className="text-xl md:text-2xl mb-6 max-w-4xl mx-auto">
-          ST ALOYSIUS (DEEMED TO BE UNIVERSITY) INSTITUTE OF MANAGEMENT AND IT
-        </div>
+        <p className="text-xl md:text-2xl mb-4 font-medium">
+          ST ALOYSIUS (DEEMED TO BE UNIVERSITY)
+          <br />
+          INSTITUTE OF MANAGEMENT AND IT
+        </p>
         
-        <div className="text-2xl md:text-3xl font-bold mb-12">
-          30TH & 31ST OCTOBER 2025
-        </div>
+        <p className="text-lg md:text-xl mb-8 text-blue-100">
+          20TH & 21ST, MARCH, 2025
+        </p>
         
-        {/* Springer CCIS Logo */}
-        <div className="inline-block bg-white p-4 rounded-lg mb-12">
-          <div className="flex items-center space-x-4">
-            <span className="text-orange-500 font-bold text-2xl">🐎 Springer</span>
-            <span className="bg-orange-500 text-white px-3 py-1 rounded font-bold">ccis</span>
+        {/* Springer Logo */}
+        <div className="bg-white rounded-lg p-4 inline-block mb-8">
+          <div className="text-black font-bold text-lg">
+            📚 Springer
+            <span className="bg-orange-500 text-white px-2 py-1 rounded ml-2">CCIS</span>
           </div>
-          <div className="text-gray-700 text-sm mt-2">
-            Springer CCIS Series ( ISSN No. - 1865-0929 )
+          <div className="text-sm text-gray-600">
+            Springer CCIS Series | ISSN No. : 1865-0929
           </div>
         </div>
         
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-          <div className="animate-bounce">
-            <ArrowDown className="w-8 h-8 text-white" />
+        {/* Scroll down indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
 
 export default HeroBanner
-

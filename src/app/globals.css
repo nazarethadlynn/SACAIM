@@ -1,3 +1,57 @@
+/* src/app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* GLOBAL BACKGROUND FOR ENTIRE PAGE */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('/images/hero/images-min.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Remove background from hero section so global shows through */
+.hero-section {
+  background: transparent !important;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Make content sections semi-transparent so background shows through */
+.content-section {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(8px);
+  margin: 1rem auto;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+}
+
+/* Navigation with transparency */
+nav {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer with transparency */
+footer {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Ensure all containers are transparent */
+main {
+  background: transparent !important;
+}
+
+#__next {
+  background: transparent !important;
+}

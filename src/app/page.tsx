@@ -1,5 +1,6 @@
+// src/app/page.tsx
 import Navigation from '@/components/Navigation'
-import Hero from '@/components/Hero'
+import HeroBanner from '@/components/sections/Hero/HeroBanner'
 import AboutUniversity from '@/components/AboutUniversity'
 import AboutConference from '@/components/AboutConference'
 import ConferenceTopics from '@/components/ConferenceTopics'
@@ -10,21 +11,50 @@ import Conveners from '@/components/Conveners'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
-
 export default function Home() {
   return (
-    <main>
+    <>
       <Navigation />
-      <Hero />
-      <AboutUniversity />
-      <AboutConference />
-      <ConferenceTopics />
-      <ConferenceChair />
-      <KeynoteSpeakers />
-      <ImportantDates />
-      <Conveners />
-      <Contact />
+      
+      <main>
+        <section id="home" className="hero-section">
+          <HeroBanner />
+        </section>
+        
+        <section id="about" className="content-section">
+          <AboutUniversity />
+        </section>
+        
+        <section className="content-section">
+          <AboutConference />
+        </section>
+        
+        <section className="content-section">
+          <ConferenceTopics />
+        </section>
+        
+        <section className="content-section">
+          <ConferenceChair />
+        </section>
+        
+        <section id="speakers" className="content-section">
+          <KeynoteSpeakers />
+        </section>
+        
+        <section id="dates" className="content-section">
+          <ImportantDates />
+        </section>
+        
+        <section className="content-section">
+          <Conveners />
+        </section>
+        
+        <section id="contact" className="content-section">
+          <Contact />
+        </section>
+      </main>
+      
       <Footer />
-    </main>
+    </>
   )
 }
