@@ -22,8 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className={inter.className}>
-        <div className="main-container">
-          {children}
+        <div className="main-container flex items-center justify-center min-h-screen">
+          <div className="text-center max-w-4xl mx-auto px-6 py-12">
+            {children}
+          </div>
         </div>
       </body>
     </html>
