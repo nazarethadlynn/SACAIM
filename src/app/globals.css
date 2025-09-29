@@ -94,69 +94,110 @@ html, body {
   padding-top: 4rem; /* ensures content not hidden behind nav on smaller viewports */
 }
 
-/* Center content styling for hero with white text support */
+/* UPDATED: Transparent center content - NO WHITE BACKGROUND */
 .center-content {
   text-align: center;
   padding: 2rem;
   max-width: 1000px;
   margin: 0 auto;
   padding: 3rem;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent; /* REMOVED WHITE BACKGROUND */
+  /* Removed white background overlay completely */
 }
 
-/* Override for hero section to have dark text on light background */
+/* UPDATED: Enhanced text visibility for hero section */
 .hero-section .center-content h1 {
   font-size: 3.5rem;
-  font-weight: 800;
+  font-weight: 900; /* Extra bold */
   line-height: 1.2;
   margin-bottom: 1.5rem;
-  color: #1a1a1a;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  color: #ffffff; /* Pure white for maximum contrast */
+  text-shadow: 
+    3px 3px 6px rgba(0, 0, 0, 0.9),
+    1px 1px 3px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(0, 0, 0, 0.5); /* Multiple shadow layers for better readability */
 }
 
 .hero-section .center-content h2 {
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 700; /* Increased weight */
   margin: 1rem 0;
-  color: #2563eb;
+  color: #f0f9ff; /* Very light blue-white */
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.9),
+    1px 1px 2px rgba(0, 0, 0, 0.7),
+    0 0 15px rgba(0, 0, 0, 0.4);
 }
 
 .hero-section .center-content h3 {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700; /* Increased weight */
   margin: 1.5rem 0 1rem 0;
-  color: #374151;
+  color: #fef3c7; /* Light warm yellow for contrast against blue/green */
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.9),
+    1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .hero-section .center-content p {
   font-size: 1.125rem;
   line-height: 1.6;
   margin: 1rem 0;
-  color: #4b5563;
+  color: #f9fafb; /* Off-white for better readability */
+  text-shadow: 
+    1px 1px 3px rgba(0, 0, 0, 0.8),
+    0 0 10px rgba(0, 0, 0, 0.3);
+  font-weight: 600; /* Semi-bold for better visibility */
 }
 
-/* Blue gradient text for AI */
+/* Enhanced blue gradient text for AI */
 .hero-section .center-content h1 .text-blue-300 {
-  background: linear-gradient(135deg, #60a5fa, #3b82f6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero-section .center-content h1 .text-blue-200 {
   background: linear-gradient(135deg, #93c5fd, #60a5fa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: none; /* Remove text shadow for gradient text */
 }
 
-/* Make content sections semi-transparent so background shows through */
+.hero-section .center-content h1 .text-blue-200 {
+  background: linear-gradient(135deg, #dbeafe, #93c5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none; /* Remove text shadow for gradient text */
+}
+
+/* UPDATED: Semi-transparent background for better text readability */
+.text-content-overlay {
+  background: linear-gradient(
+    135deg, 
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  margin: 1rem 0;
+}
+
+/* Alternative lighter overlay for sections that need less contrast */
+.text-content-light {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* UPDATED: Transparent content sections */
 .content-section {
-  background-color: rgba(255, 255, 255, 0.95) !important;
+  background-color: rgba(255, 255, 255, 0.85) !important; /* Reduced opacity for less white */
   backdrop-filter: blur(8px);
   margin: 1rem auto;
   padding: 2rem;
@@ -188,15 +229,19 @@ main {
   background: transparent !important;
 }
 
-/* Springer logo styling */
+/* UPDATED: Enhanced Springer logo for better visibility */
 .springer-logo {
   display: inline-block;
-  background: white;
+  background: rgba(255, 255, 255, 0.98); /* Increased opacity */
   padding: 1rem 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9); /* Multiple shadow layers */
   margin: 2rem 0;
-  border: 2px solid #e5e7eb;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
 }
 
 .springer-text {
@@ -329,38 +374,46 @@ html {
   flex-wrap: wrap;
 }
 
+/* UPDATED: Better button visibility on your background */
 .btn-primary {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: linear-gradient(135deg, #1e40af, #1e3a8a);
   color: white;
   padding: 0.75rem 2rem;
   border-radius: 8px;
-  font-weight: 600;
-  border: none;
+  font-weight: 700; /* Increased weight */
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Added border */
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  box-shadow: 
+    0 8px 20px rgba(30, 64, 175, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 12px 30px rgba(30, 64, 175, 0.6);
 }
 
 .btn-secondary {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.95);
   color: #1f2937;
   padding: 0.75rem 2rem;
-  border: 2px solid #374151;
+  border: 2px solid rgba(255, 255, 255, 0.9);
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: 700; /* Increased weight */
   cursor: pointer;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .btn-secondary:hover {
-  background: #374151;
-  color: white;
+  background: rgba(255, 255, 255, 1);
   transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .scroll-indicator {
@@ -374,6 +427,7 @@ html {
   animation: bounce 2s infinite;
   cursor: pointer;
   opacity: 0.8;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5)); /* Enhanced visibility */
 }
 
 .scroll-arrow:hover {
@@ -452,13 +506,12 @@ html {
 
 .btn-primary:hover {
   transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 15px 35px rgba(30, 64, 175, 0.4);
 }
 
 .btn-secondary:hover {
   transform: translateY(-4px) scale(1.05);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  color: white;
 }
 
 /* Professional card hover effects */
@@ -890,6 +943,14 @@ button.nav-item-clean:focus {
   
   .for-authors-special {
     margin-left: 0;
+  }
+  
+  .text-content-overlay {
+    padding: 1.5rem 2rem;
+  }
+  
+  .text-content-light {
+    padding: 1rem 1.5rem;
   }
 }
 
