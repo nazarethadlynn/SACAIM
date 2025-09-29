@@ -1,22 +1,18 @@
-// src/app/layout.tsx
 import './globals.css'
-import type { ReactNode } from 'react'
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
 
 export const metadata = {
-  title: 'ICAIH Conference',
-  description: 'International Conference on Artificial Intelligence in Health Care',
+  title: 'ICAIH 2025',
+  description: 'International Conference on Artificial Intelligence in Healthcare',
 }
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body>
-        <Navigation />
-        <main>{children}</main>
-        <Footer />
-      </body>
+      <body>{children}</body>
     </html>
   )
 }

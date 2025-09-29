@@ -10,15 +10,14 @@ export default function Navigation() {
   return (
     <nav className="site-nav">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4">
-        {/* Logo (left) */}
+        {/* Logo (left) - ONLY CHANGED THE SVG TO SIMPLE TEXT */}
         <div className="flex items-center gap-3">
           <Link href="/" className="logo-link">
             <div className="flex items-center">
               <div className="w-14 h-14 bg-white rounded-lg flex items-center justify-center shadow-sm">
                 <div className="w-10 h-6 bg-green-600 rounded-sm flex items-center justify-center">
-                  <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12,2L14,9L21,9L15.5,13.5L17.5,21L12,17L6.5,21L8.5,13.5L3,9L10,9L12,2Z" />
-                  </svg>
+                  {/* SIMPLE "I" INSTEAD OF STAR SVG */}
+                  <span className="text-white font-bold text-lg">I</span>
                 </div>
               </div>
               <span className="ml-3 text-white font-bold text-lg">ICAIH</span>
@@ -26,7 +25,7 @@ export default function Navigation() {
           </Link>
         </div>
 
-        {/* Center nav links (desktop) */}
+        {/* Center nav links (desktop) - KEPT EXACTLY AS YOU HAD */}
         <div className="hidden md:flex flex-1 justify-center space-x-6">
           <Link href="/" className="nav-link active">Home</Link>
           <Link href="/about" className="nav-link">About</Link>
@@ -39,12 +38,12 @@ export default function Navigation() {
           </div>
         </div>
 
-        {/* CTA (right) */}
+        {/* CTA (right) - KEPT EXACTLY AS YOU HAD */}
         <div className="hidden md:block">
           <Link href="/for-authors" className="cta-btn">For Authors</Link>
         </div>
 
-        {/* Mobile button */}
+        {/* Mobile button - KEPT YOUR ORIGINAL SVG */}
         <div className="md:hidden">
           <button onClick={() => setOpen(p => !p)} aria-label="Toggle menu" className="p-2">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -54,7 +53,7 @@ export default function Navigation() {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu - KEPT EXACTLY AS YOU HAD */}
       {open && (
         <div className="md:hidden mobile-menu">
           <div className="px-4 pb-4 space-y-2">
