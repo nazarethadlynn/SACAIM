@@ -1,32 +1,21 @@
 // src/app/layout.tsx
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
+import type { ReactNode } from 'react'
+import Navigation from '@/components/Navigation'
+import Footer from '@/components/Footer'
 
-const inter = Inter({ 
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter'
-})
-
-export const metadata: Metadata = {
-  title: 'ICAIH 2025 - International Conference on Artificial Intelligence in Health Care',
-  description: 'International Conference on Artificial Intelligence in Health Care at St Aloysius Institute',
+export const metadata = {
+  title: 'ICAIH Conference',
+  description: 'International Conference on Artificial Intelligence in Health Care',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className={inter.className}>
-        <div className="main-container flex items-center justify-center min-h-screen">
-          <div className="text-center max-w-4xl mx-auto px-6 py-12">
-            {children}
-          </div>
-        </div>
+    <html lang="en">
+      <body>
+        <Navigation />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )

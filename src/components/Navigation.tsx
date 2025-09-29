@@ -4,90 +4,69 @@
 import { useState } from 'react'
 import Link from 'next/link'
 
-const Navigation = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+export default function Navigation() {
+  const [open, setOpen] = useState(false)
 
   return (
-    <nav className="w-full py-4">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <div className="flex items-center">
-            <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mr-4">
-              <span className="text-white font-bold text-xl">I</span>
+    <nav className="site-nav">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4">
+        {/* Logo (left) */}
+        <div className="flex items-center gap-3">
+          <Link href="/" className="logo-link">
+            <div className="flex items-center">
+              <div className="w-14 h-14 bg-white rounded-lg flex items-center justify-center shadow-sm">
+                <div className="w-10 h-6 bg-green-600 rounded-sm flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12,2L14,9L21,9L15.5,13.5L17.5,21L12,17L6.5,21L8.5,13.5L3,9L10,9L12,2Z" />
+                  </svg>
+                </div>
+              </div>
+              <span className="ml-3 text-white font-bold text-lg">ICAIH</span>
             </div>
-            <div className="text-green-600 font-bold text-2xl">ICAIH</div>
-          </div>
+          </Link>
+        </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="#home" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
-              Home
-            </Link>
-            <Link href="#about" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
-              About
-            </Link>
-            <Link href="#speakers" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
-              Keynote Speakers
-            </Link>
-            <Link href="#dates" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
-              Important Dates
-            </Link>
-            <Link href="#contact" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
-              Contact
-            </Link>
-            <Link href="#committees" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
-              Committees
-            </Link>
-          </div>
-
-          {/* For Authors Button */}
-          <div className="hidden md:block">
-            <Link 
-              href="#authors" 
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors"
-            >
-              For Authors
-            </Link>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 p-2 hover:bg-gray-100 rounded-lg transition-colors"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} 
-                />
-              </svg>
-            </button>
+        {/* Center nav links (desktop) */}
+        <div className="hidden md:flex flex-1 justify-center space-x-6">
+          <Link href="/" className="nav-link active">Home</Link>
+          <Link href="/about" className="nav-link">About</Link>
+          <Link href="/keynote-speakers" className="nav-link">Keynote Speakers</Link>
+          <Link href="/important-dates" className="nav-link">Important Dates</Link>
+          <Link href="/contact" className="nav-link">Contact</Link>
+          <div className="relative">
+            <button className="nav-link">Committees ▾</button>
+            {/* Dropdown placeholder - implement if needed */}
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-4 bg-white rounded-lg shadow-lg p-4">
-            <div className="flex flex-col space-y-3">
-              <Link href="#home" className="text-gray-700 font-medium py-2">Home</Link>
-              <Link href="#about" className="text-gray-700 font-medium py-2">About</Link>
-              <Link href="#speakers" className="text-gray-700 font-medium py-2">Keynote Speakers</Link>
-              <Link href="#dates" className="text-gray-700 font-medium py-2">Important Dates</Link>
-              <Link href="#contact" className="text-gray-700 font-medium py-2">Contact</Link>
-              <Link href="#committees" className="text-gray-700 font-medium py-2">Committees</Link>
-              <Link href="#authors" className="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg text-center">
-                For Authors
-              </Link>
-            </div>
-          </div>
-        )}
+        {/* CTA (right) */}
+        <div className="hidden md:block">
+          <Link href="/for-authors" className="cta-btn">For Authors</Link>
+        </div>
+
+        {/* Mobile button */}
+        <div className="md:hidden">
+          <button onClick={() => setOpen(p => !p)} aria-label="Toggle menu" className="p-2">
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={open ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+            </svg>
+          </button>
+        </div>
       </div>
+
+      {/* Mobile menu */}
+      {open && (
+        <div className="md:hidden mobile-menu">
+          <div className="px-4 pb-4 space-y-2">
+            <Link href="/" className="mobile-link">Home</Link>
+            <Link href="/about" className="mobile-link">About</Link>
+            <Link href="/keynote-speakers" className="mobile-link">Keynote Speakers</Link>
+            <Link href="/important-dates" className="mobile-link">Important Dates</Link>
+            <Link href="/contact" className="mobile-link">Contact</Link>
+            <Link href="/for-authors" className="mobile-cta">For Authors</Link>
+          </div>
+        </div>
+      )}
     </nav>
   )
 }
-
-export default Navigation
