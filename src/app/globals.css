@@ -6,6 +6,8 @@
 /* Reset/box-sizing */
 *, *::before, *::after { box-sizing: border-box; }
 
+/* ========== GLOBAL BODY PADDING FOR FIXED NAV ========== */
+
 /* GLOBAL BACKGROUND FOR ENTIRE PAGE */
 html, body {
   height: 100%;
@@ -15,6 +17,7 @@ html, body {
   background-color: #2f86a8; /* gentle bluish background to match your theme */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-top: 88px !important; /* Height of navigation bar */
 }
 
 /* NAV: sticky + above hero */
@@ -87,11 +90,11 @@ html, body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* optional */
-  min-height: calc(100vh - 72px); /* leaves space for sticky nav; adjust if your nav height differs */
+  min-height: calc(100vh - 88px) !important; /* Adjusted for fixed nav */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 4rem; /* ensures content not hidden behind nav on smaller viewports */
+  padding-top: 2rem !important; /* Reduced since nav is fixed */
 }
 
 /* UPDATED: Transparent center content - NO WHITE BACKGROUND */
@@ -223,6 +226,7 @@ footer {
 /* Ensure all containers are transparent */
 main {
   background: transparent !important;
+  min-height: calc(100vh - 88px);
 }
 
 #__next {
@@ -618,12 +622,15 @@ button:focus, a:focus {
   }
 }
 
-/* ========== CREATIVE NAVIGATION STYLES - CLEAN TEXT BUTTONS ========== */
+/* ========== FIXED NAVIGATION BAR - STAYS AT TOP ========== */
 
-/* Main Creative Navigation */
+/* Main Creative Navigation - FIXED POSITION */
 .creative-nav {
-  position: sticky !important;
+  position: fixed !important; /* CHANGED FROM STICKY TO FIXED */
   top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
   z-index: 1000 !important;
   background: linear-gradient(135deg, 
     rgba(59, 130, 246, 0.95) 0%, 
@@ -968,5 +975,86 @@ button:focus {
 /* Override focus for nav buttons specifically */
 .nav-item-clean:focus,
 .for-authors-special:focus {
+  outline: none !important;
+}
+
+/* ========== REMOVE UNDERLINES FROM NAVIGATION LINKS ========== */
+
+/* Remove underlines from all navigation links */
+.nav-link-clean {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+}
+
+.nav-link-clean:hover {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+}
+
+.nav-link-clean:focus {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+}
+
+.nav-link-clean:active {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+}
+
+.nav-link-clean:visited {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* Logo link styling */
+.logo-link {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+  display: block;
+}
+
+.logo-link:hover {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* Force no underlines on Link components in navigation */
+.creative-nav a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.creative-nav a:hover {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.creative-nav a:focus {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+}
+
+.creative-nav a:active {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.creative-nav a:visited {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* Global override for any stubborn link styles */
+.nav-item-clean.nav-link-clean,
+.for-authors-special.nav-link-clean {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  border: none !important;
   outline: none !important;
 }

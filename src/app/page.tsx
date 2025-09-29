@@ -1,4 +1,3 @@
-// src/app/page.tsx
 import HeroBanner from '@/components/sections/Hero/HeroBanner'
 import AboutUniversity from '@/components/AboutUniversity'
 import AboutConference from '@/components/AboutConference'
@@ -12,43 +11,46 @@ import Contact from '@/components/Contact'
 export default function Home() {
   return (
     <>
-      <main>
-        <section id="home" className="hero-section">
-          <HeroBanner />
-        </section>
+      {/* Add padding-top to account for fixed navigation */}
+      <div style={{ paddingTop: '88px' }}>
+        <main>
+          <section id="home" className="hero-section" style={{ minHeight: 'calc(100vh - 88px)' }}>
+            <HeroBanner />
+          </section>
 
-        <section id="about" className="content-section">
-          <AboutUniversity />
-        </section>
+          <section id="about" className="content-section">
+            <AboutUniversity />
+          </section>
 
-        <section className="content-section">
-          <AboutConference />
-        </section>
+          <section className="content-section">
+            <AboutConference />
+          </section>
 
-        <section className="content-section">
-          <ConferenceTopics />
-        </section>
+          <section className="content-section">
+            <ConferenceTopics />
+          </section>
 
-        <section className="content-section">
-          <ConferenceChair />
-        </section>
+          <section className="content-section">
+            <ConferenceChair />
+          </section>
 
-        <section id="speakers" className="content-section">
-          <KeynoteSpeakers />
-        </section>
+          <section id="speakers" className="content-section">
+            <KeynoteSpeakers />
+          </section>
 
-        <section id="dates" className="content-section">
-          <ImportantDates />
-        </section>
+          <section id="dates" className="content-section">
+            <ImportantDates />
+          </section>
 
-        <section className="content-section">
-          <Conveners />
-        </section>
+          <section className="content-section">
+            <Conveners />
+          </section>
 
-        <section id="contact" className="content-section">
-          <Contact />
-        </section>
-      </main>
+          <section id="contact" className="content-section">
+            <Contact />
+          </section>
+        </main>
+      </div>
     </>
   )
 }
