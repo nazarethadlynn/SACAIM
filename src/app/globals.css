@@ -6,7 +6,13 @@
 /* Reset/box-sizing */
 *, *::before, *::after { box-sizing: border-box; }
 
+<<<<<<< HEAD
 /* FIXED BACKGROUND FOR ENTIRE APPLICATION */
+=======
+/* ========== GLOBAL BODY PADDING FOR FIXED NAV ========== */
+
+/* GLOBAL BACKGROUND FOR ENTIRE PAGE */
+>>>>>>> 3cf549e27ab34f05064e660f46240743b6845aec
 html, body {
   height: 100%;
   margin: 0;
@@ -14,6 +20,7 @@ html, body {
   font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-top: 88px !important; /* Height of navigation bar */
 }
 
 /* Fixed background layout for body */
@@ -171,6 +178,7 @@ html, body {
 
 /* UPDATED: Hero section with transparent background */
 .hero-section {
+<<<<<<< HEAD
   /* Remove background-image from here since it's now on body */
   background: transparent !important;
   min-height: calc(100vh - 72px);
@@ -178,6 +186,19 @@ html, body {
   align-items: center;
   justify-content: center;
   padding-top: 4rem;
+=======
+  /* move the image here instead of on html/body */
+  background-image: url('https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* optional */
+  min-height: calc(100vh - 88px) !important; /* Adjusted for fixed nav */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem !important; /* Reduced since nav is fixed */
+>>>>>>> 3cf549e27ab34f05064e660f46240743b6845aec
 }
 
 /* UPDATED: Transparent center content - NO WHITE BACKGROUND */
@@ -297,6 +318,7 @@ footer {
 /* Ensure all containers are transparent */
 main {
   background: transparent !important;
+  min-height: calc(100vh - 88px);
 }
 
 #__next {
@@ -670,6 +692,7 @@ button:focus, a:focus {
     transform: none;
   }
 
+<<<<<<< HEAD
   .text-content-overlay {
     padding: 1.5rem 2rem;
   }
@@ -759,9 +782,17 @@ button:focus {
 }
 
 /* Creative Navigation Styles */
+=======
+/* ========== FIXED NAVIGATION BAR - STAYS AT TOP ========== */
+
+/* Main Creative Navigation - FIXED POSITION */
+>>>>>>> 3cf549e27ab34f05064e660f46240743b6845aec
 .creative-nav {
-  position: sticky !important;
+  position: fixed !important; /* CHANGED FROM STICKY TO FIXED */
   top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
   z-index: 1000 !important;
   background: linear-gradient(135deg, 
     rgba(59, 130, 246, 0.95) 0%, 
@@ -826,8 +857,8 @@ button:focus {
 .logo-text {
   color: white;
   font-weight: 800;
-  font-size: 16px;
-  letter-spacing: 1px;
+  font-size: 14px; /* Adjusted for SACAIM */
+  letter-spacing: 0.5px;
 }
 
 .brand-info {
@@ -857,39 +888,89 @@ button:focus {
   flex-wrap: wrap;
 }
 
-.nav-item {
+/* ========== COMPLETELY CLEAN NAVIGATION ITEMS - NO BACKGROUNDS ========== */
+
+/* Clean Navigation Items - NO BACKGROUNDS AT ALL */
+.nav-item-clean {
   position: relative;
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 12px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
+  background: transparent !important; /* COMPLETELY TRANSPARENT */
+  border: none !important;
+  outline: none !important;
+  border-radius: 0; /* NO ROUNDED CORNERS */
   color: white;
   font-weight: 500;
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  overflow: hidden;
+  backdrop-filter: none !important; /* NO BLUR EFFECT */
+  overflow: visible;
+  box-shadow: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
 }
 
-.nav-item:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+.nav-item-clean:hover {
+  background: rgba(255, 255, 255, 0.1) !important; /* VERY SUBTLE HOVER */
+  transform: translateY(-1px); /* MINIMAL MOVEMENT */
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  border-radius: 6px; /* ONLY ON HOVER */
 }
 
-.nav-item.active {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-  transform: scale(1.05);
+.nav-item-clean:focus {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 6px;
 }
 
-.nav-icon {
-  font-size: 16px;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+.nav-item-clean.active {
+  background: rgba(255, 255, 255, 0.15) !important; /* VERY SUBTLE ACTIVE */
+  transform: none;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 6px;
+}
+
+/* Remove any default button styling - COMPLETELY INVISIBLE BY DEFAULT */
+.nav-item-clean, .nav-item-clean:hover, .nav-item-clean:focus, .nav-item-clean:active {
+  border: none !important;
+  outline: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Override any global button styles for nav items */
+button.nav-item-clean {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+button.nav-item-clean:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: none !important;
+  outline: none !important;
+  border-radius: 6px !important;
+}
+
+button.nav-item-clean:focus {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 6px !important;
 }
 
 .nav-label {
@@ -897,60 +978,56 @@ button:focus {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* Remove the glow effect completely */
 .nav-glow {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  display: none !important;
 }
 
-.nav-item:hover .nav-glow {
-  opacity: 1;
-}
-
-/* Special For Authors Button */
+/* Also update the For Authors button to be less prominent */
 .for-authors-special {
   position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 28px;
+  padding: 12px 24px; /* Slightly smaller */
   background: linear-gradient(135deg, #f59e0b, #d97706);
-  border: none;
+  border: none !important;
+  outline: none !important;
   border-radius: 20px;
   color: white;
-  font-weight: 700;
-  font-size: 15px;
+  font-weight: 600; /* Slightly less bold */
+  font-size: 14px; /* Slightly smaller */
   cursor: pointer;
-  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3) !important; /* Less shadow */
+  transition: all 0.3s ease; /* Faster transition */
   overflow: hidden;
   margin-left: 16px;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
 }
 
 .for-authors-special:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 15px 35px rgba(245, 158, 11, 0.6);
+  transform: translateY(-2px) scale(1.02); /* Less dramatic */
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4) !important; /* Less shadow */
   background: linear-gradient(135deg, #f97316, #ea580c);
+  border: none !important;
+  outline: none !important;
 }
 
-.authors-icon {
-  font-size: 18px;
-  animation: sparkle 2s ease-in-out infinite;
+.for-authors-special:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4) !important;
 }
 
 .authors-text {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* Remove pulse animation */
 .authors-pulse {
-  position: absolute;
-  inset: -4px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.3), transparent);
-  border-radius: 20px;
-  animation: pulse 2s ease-in-out infinite;
-  z-index: -1;
+  display: none !important;
 }
 
 /* Creative Animations */
@@ -964,30 +1041,20 @@ button:focus {
   100% { transform: rotate(360deg); }
 }
 
-@keyframes sparkle {
-  0%, 100% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.2) rotate(10deg); }
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0; transform: scale(0.8); }
-  50% { opacity: 1; transform: scale(1.1); }
-}
-
 /* Creative Navigation Mobile Responsive */
 @media (max-width: 1024px) {
   .nav-items {
     gap: 6px;
   }
   
-  .nav-item {
+  .nav-item-clean {
     padding: 10px 16px;
     font-size: 13px;
   }
   
   .for-authors-special {
-    padding: 12px 20px;
-    font-size: 14px;
+    padding: 10px 18px;
+    font-size: 13px;
     margin-left: 8px;
   }
 }
@@ -1011,4 +1078,102 @@ button:focus {
   .for-authors-special {
     margin-left: 0;
   }
+}
+
+/* Remove default button styles - GLOBAL OVERRIDE FOR NAV */
+button {
+  outline: none;
+  border: none;
+}
+
+button:focus {
+  outline: 2px solid rgba(59, 130, 246, 0.5);
+  outline-offset: 2px;
+}
+
+/* Override focus for nav buttons specifically */
+.nav-item-clean:focus,
+.for-authors-special:focus {
+  outline: none !important;
+}
+
+/* ========== REMOVE UNDERLINES FROM NAVIGATION LINKS ========== */
+
+/* Remove underlines from all navigation links */
+.nav-link-clean {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+}
+
+.nav-link-clean:hover {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+}
+
+.nav-link-clean:focus {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+}
+
+.nav-link-clean:active {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+}
+
+.nav-link-clean:visited {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* Logo link styling */
+.logo-link {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+  display: block;
+}
+
+.logo-link:hover {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* Force no underlines on Link components in navigation */
+.creative-nav a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.creative-nav a:hover {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.creative-nav a:focus {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  outline: none !important;
+}
+
+.creative-nav a:active {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.creative-nav a:visited {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* Global override for any stubborn link styles */
+.nav-item-clean.nav-link-clean,
+.for-authors-special.nav-link-clean {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  border: none !important;
+  outline: none !important;
 }

@@ -37,11 +37,11 @@ const Navigation = () => {
         {/* Creative Logo/Brand on Left */}
         <div className="nav-brand">
           <div className="logo-circle">
-            <span className="logo-text">ICAIH</span>
+            <span className="logo-text">SACAIM</span>
           </div>
           <div className="brand-info">
-            <div className="brand-title">AI Healthcare 2025</div>
-            <div className="brand-subtitle">March 20-21</div>
+            <div className="brand-title">SACAIM</div>
+            <div className="brand-subtitle">October 30-31</div>
           </div>
         </div>
 
@@ -51,7 +51,7 @@ const Navigation = () => {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id, index)}
-              className={`nav-item ${activeIndex === index ? 'active' : ''}`}
+              className={`nav-item-clean ${activeIndex === index ? 'active' : ''}`}
             >
               <span className="nav-label">{item.label}</span>
               <div className="nav-glow"></div>
@@ -64,7 +64,6 @@ const Navigation = () => {
             className="for-authors-special"
           >
             <span className="authors-text">For Authors</span>
-            <div className="authors-pulse"></div>
           </button>
         </div>
 
