@@ -6,25 +6,115 @@
 /* Reset/box-sizing */
 *, *::before, *::after { box-sizing: border-box; }
 
-/* GLOBAL BACKGROUND FOR ENTIRE PAGE */
+/* FIXED BACKGROUND FOR ENTIRE APPLICATION */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background-color: #2f86a8; /* gentle bluish background to match your theme */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* NAV: sticky + above hero */
+/* Fixed background layout for body */
+.fixed-background-layout {
+  position: relative;
+  min-height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* This keeps the background fixed */
+}
+
+/* Transparent scrollable content overlay */
+.scrollable-content {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  min-height: 100vh;
+}
+
+/* Ensure all pages have transparent backgrounds */
+.page-content {
+  background: transparent !important;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* Black transparent overlay for better text readability */
+.black-overlay-content {
+  background: linear-gradient(
+    135deg, 
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  padding: 3rem 4rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Centered layout for all content */
+.centered-page-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  padding: 2rem 1rem;
+}
+
+/* Force white text in black overlay content - IMPORTANT OVERRIDES */
+.black-overlay-content h1,
+.black-overlay-content h2,
+.black-overlay-content h3,
+.black-overlay-content h4,
+.black-overlay-content h5,
+.black-overlay-content h6 {
+  color: #ffffff !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+.black-overlay-content p,
+.black-overlay-content span,
+.black-overlay-content div {
+  color: #ffffff !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Ensure all text inside black overlay is white */
+.black-overlay-content * {
+  color: #ffffff !important;
+}
+
+/* Override any conflicting styles */
+.black-overlay-content .text-white {
+  color: #ffffff !important;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Make sure all paragraph text is bright white */
+.black-overlay-content p.text-base {
+  color: #ffffff !important;
+  font-weight: 500 !important;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* NAV: sticky + above hero with updated z-index */
 .site-nav, nav {
   position: sticky;
   top: 0;
-  z-index: 80; /* ensure nav stays above hero background/content */
-  background: rgba(47,134,168,0.95); /* fallback color */
-  backdrop-filter: blur(6px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  z-index: 100; /* Higher z-index for fixed background */
+  background: rgba(59, 130, 246, 0.95) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* desktop centered links fallback */
@@ -79,19 +169,15 @@ html, body {
   font-weight: 700;
 }
 
-/* Hero section - full screen */
+/* UPDATED: Hero section with transparent background */
 .hero-section {
-  /* move the image here instead of on html/body */
-  background-image: url('https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* optional */
-  min-height: calc(100vh - 72px); /* leaves space for sticky nav; adjust if your nav height differs */
+  /* Remove background-image from here since it's now on body */
+  background: transparent !important;
+  min-height: calc(100vh - 72px);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 4rem; /* ensures content not hidden behind nav on smaller viewports */
+  padding-top: 4rem;
 }
 
 /* UPDATED: Transparent center content - NO WHITE BACKGROUND */
@@ -195,29 +281,17 @@ html, body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* UPDATED: Transparent content sections */
+/* UPDATED: Completely transparent content sections */
 .content-section {
-  background-color: rgba(255, 255, 255, 0.85) !important; /* Reduced opacity for less white */
-  backdrop-filter: blur(8px);
+  background: transparent !important;
   margin: 1rem auto;
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   max-width: 1200px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/* Navigation with transparency */
-nav {
-  background-color: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer with transparency */
 footer {
-  background-color: rgba(255, 255, 255, 0.95) !important;
-  backdrop-filter: blur(10px);
+  background: transparent !important;
 }
 
 /* Ensure all containers are transparent */
@@ -274,21 +348,24 @@ main {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #1f2937;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .content-section h3 {
   font-size: 1.5rem;
   font-weight: 600;
   margin: 1.5rem 0 1rem 0;
-  color: #374151;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .content-section p {
   font-size: 1rem;
   line-height: 1.6;
   margin: 1rem 0;
-  color: #4b5563;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 /* Button animations */
@@ -301,7 +378,7 @@ button:hover {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* responsive */
+/* Mobile responsive for black overlay */
 @media (max-width: 768px) {
   .hero-section .center-content h1 {
     font-size: 2.5rem;
@@ -315,6 +392,17 @@ button:hover {
   .content-section {
     margin: 0.5rem;
     padding: 1.5rem;
+  }
+  
+  .black-overlay-content {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+    max-width: calc(100vw - 2rem);
+  }
+  
+  .centered-page-content {
+    padding: 1rem 0.5rem;
+    min-height: calc(100vh - 60px);
   }
   
   .flex-col {
@@ -337,6 +425,11 @@ button:hover {
   
   .springer-logo {
     padding: 0.75rem 1.5rem;
+  }
+  
+  .black-overlay-content {
+    padding: 1.5rem 1rem;
+    margin: 0.5rem;
   }
 }
 
@@ -452,50 +545,34 @@ html {
 
 /* Enhanced navigation animations */
 .nav-scrolled {
-  background: rgba(255, 255, 255, 0.98) !important;
+  background: rgba(59, 130, 246, 0.98) !important;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
   backdrop-filter: blur(20px) !important;
 }
 
 .nav-scrolled .nav-link {
-  color: #374151 !important;
+  color: #ffffff !important;
 }
 
 .nav-scrolled .nav-link:hover {
-  background: rgba(59, 130, 246, 0.1) !important;
-  color: #2563eb !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
 }
 
 .nav-scrolled .logo-link span {
-  color: #1f2937 !important;
+  color: #ffffff !important;
 }
 
 /* Professional hover effects for content sections */
 .content-section {
-  transform: translateY(20px);
-  opacity: 0;
-  animation: slideInUp 0.8s ease-out forwards;
+  transform: translateY(0);
+  opacity: 1;
   transition: all 0.5s ease;
 }
 
 .content-section:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15) !important;
 }
-
-@keyframes slideInUp {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* Staggered animation delays for sections */
-.content-section:nth-child(1) { animation-delay: 0.1s; }
-.content-section:nth-child(2) { animation-delay: 0.2s; }
-.content-section:nth-child(3) { animation-delay: 0.3s; }
-.content-section:nth-child(4) { animation-delay: 0.4s; }
-.content-section:nth-child(5) { animation-delay: 0.5s; }
 
 /* Enhanced button animations */
 .btn-primary, .btn-secondary {
@@ -536,29 +613,6 @@ html {
   100% {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
-  }
-}
-
-/* Professional loading animations for sections */
-@keyframes slideInFromLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromRight {
-  0% {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
   }
 }
 
@@ -610,32 +664,19 @@ button:focus, a:focus {
   .content-section {
     transform: none;
     opacity: 1;
-    animation: none;
   }
   
   .content-section:hover {
     transform: none;
   }
-}
 
-/* Clean Top Navbar - NO COMPLEX STYLES */
-.top-navbar {
-  background: #3b82f6;
-  width: 100%;
-  padding: 12px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Mobile hide for clean design */
-@media (max-width: 768px) {
-  nav.bg-blue-500 {
-    display: none;
+  .text-content-overlay {
+    padding: 1.5rem 2rem;
   }
-}
-
-/* Adjust hero section */
-.hero-section {
-  min-height: calc(100vh - 60px);
+  
+  .text-content-light {
+    padding: 1rem 1.5rem;
+  }
 }
 
 /* Clean Navigation Styles */
@@ -717,9 +758,7 @@ button:focus {
   }
 }
 
-/* ========== CREATIVE NAVIGATION STYLES - ADDED FOR NEW DESIGN ========== */
-
-/* Override navigation background for creative design */
+/* Creative Navigation Styles */
 .creative-nav {
   position: sticky !important;
   top: 0 !important;
@@ -914,41 +953,6 @@ button:focus {
   z-index: -1;
 }
 
-/* Creative Background Elements */
-.nav-bg-elements {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.floating-dot {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  animation: float 6s ease-in-out infinite;
-}
-
-.dot-1 {
-  top: 20%;
-  left: 15%;
-  animation-delay: 0s;
-}
-
-.dot-2 {
-  top: 60%;
-  right: 25%;
-  animation-delay: 2s;
-}
-
-.dot-3 {
-  bottom: 30%;
-  left: 70%;
-  animation-delay: 4s;
-}
-
 /* Creative Animations */
 @keyframes logoFloat {
   0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -1006,13 +1010,5 @@ button:focus {
   
   .for-authors-special {
     margin-left: 0;
-  }
-  
-  .text-content-overlay {
-    padding: 1.5rem 2rem;
-  }
-  
-  .text-content-light {
-    padding: 1rem 1.5rem;
   }
 }

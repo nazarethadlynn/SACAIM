@@ -1,7 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
-
 const ConferenceTopics = () => {
   const tracks = [
     {
@@ -57,57 +55,92 @@ const ConferenceTopics = () => {
   ]
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+    <div className="centered-page-content">
+      <div className="black-overlay-content">
+        <h2 
+          className="text-4xl md:text-5xl font-bold text-center mb-8 text-white" 
+          style={{color: '#ffffff', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)'}}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800">
-            Conference Topics
-          </h2>
-          <p className="text-xl text-center mb-12 text-gray-600">
-            Papers at ICAIH-2025 would be in the following topics
+          CONFERENCE TOPICS
+        </h2>
+        
+        <div className="text-center mb-12">
+          <p 
+            className="text-xl text-white font-medium" 
+            style={{color: '#ffffff', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.6)'}}
+          >
+            Papers at <span className="text-yellow-200 font-semibold" style={{color: '#fef08a', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)'}}>ICAIH-2025</span> would be in the following topics
           </p>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {tracks.map((track, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {tracks.map((track, index) => (
+            <div
+              key={index}
+              className="bg-black bg-opacity-40 backdrop-blur-sm rounded-lg p-6 border border-gray-400 hover:bg-opacity-50 transition-all duration-300"
+              style={{
+                backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                borderColor: 'rgba(255, 255, 255, 0.3)',
+                backdropFilter: 'blur(8px)'
+              }}
+            >
+              <h3 
+                className="text-xl font-bold mb-4 text-blue-200 border-b-2 border-blue-400 pb-2" 
+                style={{
+                  color: '#bfdbfe', 
+                  textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)',
+                  borderBottomColor: 'rgba(96, 165, 250, 0.6)'
+                }}
               >
-                <h3 className="text-xl font-bold mb-4 text-blue-800 border-b-2 border-blue-200 pb-2">
-                  Track {index + 1}
-                </h3>
-                <h4 className="text-lg font-semibold mb-4 text-gray-800">
-                  {track.title}
-                </h4>
-                <ul className="space-y-2">
-                  {track.topics.map((topic, topicIndex) => (
-                    <li key={topicIndex} className="flex items-start">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span className="text-gray-700">{topic}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-          
-          <div className="mt-12 text-center">
-            <p className="text-lg text-gray-700 bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
-              <strong>Note:</strong> Any papers related to AI & ML can be considered.
+                Track {index + 1}
+              </h3>
+              
+              <h4 
+                className="text-lg font-semibold mb-4 text-white" 
+                style={{color: '#ffffff', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.6)'}}
+              >
+                {track.title}
+              </h4>
+              
+              <ul className="space-y-3">
+                {track.topics.map((topic, topicIndex) => (
+                  <li key={topicIndex} className="flex items-start">
+                    <span 
+                      className="w-2 h-2 bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0" 
+                      style={{backgroundColor: '#60a5fa'}}
+                    ></span>
+                    <span 
+                      className="text-white font-medium" 
+                      style={{color: '#ffffff', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.6)'}}
+                    >
+                      {topic}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        
+        <div className="mt-12 text-center">
+          <div 
+            className="text-lg p-6 rounded-lg border-l-4 border-yellow-400"
+            style={{
+              backgroundColor: 'rgba(0, 0, 0, 0.3)',
+              borderLeftColor: '#fbbf24',
+              backdropFilter: 'blur(6px)'
+            }}
+          >
+            <p 
+              className="text-white font-medium" 
+              style={{color: '#ffffff', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.6)'}}
+            >
+              <span className="text-yellow-200 font-bold" style={{color: '#fef08a', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)'}}>Note:</span> Any papers related to <span className="text-blue-200 font-semibold" style={{color: '#bfdbfe', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)'}}>AI & ML</span> can be considered.
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
-    </section>
+    </div>
   )
 }
 

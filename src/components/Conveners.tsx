@@ -1,7 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
-
 const Conveners = () => {
   const conveners = [
     {
@@ -17,42 +15,81 @@ const Conveners = () => {
   ]
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+    <div className="centered-page-content">
+      <div className="black-overlay-content">
+        <h2 
+          className="text-4xl md:text-5xl font-bold text-center mb-12 text-white" 
+          style={{color: '#ffffff', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)'}}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-            Conveners
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {conveners.map((convener, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-lg p-8 text-center shadow-lg hover:shadow-xl transition-shadow"
+          CONVENERS
+        </h2>
+        
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {conveners.map((convener, index) => (
+            <div
+              key={index}
+              className="bg-black bg-opacity-40 backdrop-blur-sm rounded-lg p-8 text-center border border-gray-400 hover:bg-opacity-50 transition-all duration-300"
+              style={{
+                backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                borderColor: 'rgba(255, 255, 255, 0.3)',
+                backdropFilter: 'blur(8px)'
+              }}
+            >
+              <div 
+                className="w-24 h-24 rounded-full mx-auto mb-6 flex items-center justify-content"
+                style={{
+                  background: 'linear-gradient(135deg, #10b981, #059669)'
+                }}
               >
-                <div className="w-24 h-24 bg-gradient-to-br from-green-200 to-green-300 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-3xl font-bold text-green-800">
-                    {convener.name.split(' ')[1]?.[0] || convener.name[0]}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{convener.name}</h3>
-                <p className="text-lg text-green-600 mb-2">{convener.title}</p>
-                <p className="text-gray-600 text-sm">{convener.institution}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+                <span 
+                  className="text-3xl font-bold text-white w-full text-center" 
+                  style={{color: '#ffffff', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)'}}
+                >
+                  {convener.name.split(' ')[1]?.[0] || convener.name[0]}
+                </span>
+              </div>
+              
+              <h3 
+                className="text-xl font-bold mb-3 text-blue-200" 
+                style={{color: '#bfdbfe', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)'}}
+              >
+                {convener.name}
+              </h3>
+              
+              <p 
+                className="text-lg mb-4 text-green-200 font-semibold" 
+                style={{color: '#bbf7d0', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)'}}
+              >
+                {convener.title}
+              </p>
+              
+              <p 
+                className="text-white font-medium text-sm leading-relaxed" 
+                style={{color: '#ffffff', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.6)'}}
+              >
+                {convener.institution}
+              </p>
+            </div>
+          ))}
+        </div>
+        
+        <div 
+          className="mt-12 p-6 rounded-lg border-l-4 max-w-4xl mx-auto"
+          style={{
+            backgroundColor: 'rgba(0, 0, 0, 0.3)',
+            borderLeftColor: '#8b5cf6',
+            backdropFilter: 'blur(6px)'
+          }}
+        >
+          <p 
+            className="text-center text-lg font-medium"
+            style={{color: '#ffffff', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.6)'}}
+          >
+            👥 <span className="text-purple-200 font-semibold" style={{color: '#ddd6fe', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)'}}>Conference Organizing Team:</span> The conveners are dedicated to ensuring a successful and impactful conference experience for all participants.
+          </p>
+        </div>
       </div>
-    </section>
+    </div>
   )
 }
 

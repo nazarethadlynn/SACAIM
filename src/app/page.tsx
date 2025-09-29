@@ -1,3 +1,4 @@
+// src/app/page.tsx
 import Navigation from '@/components/Navigation'
 import HeroBanner from '@/components/sections/Hero/HeroBanner'
 import AboutUniversity from '@/components/AboutUniversity'
@@ -11,46 +12,46 @@ import Contact from '@/components/Contact'
 
 export default function Home() {
   return (
-    <>
+    <div className="scrollable-content">
       <Navigation />
       
-      <main>
+      <main className="page-content">
         <section id="home" className="hero-section">
           <HeroBanner />
         </section>
 
-        <section id="about" className="content-section">
+        <section id="about" className="hero-section">
           <AboutUniversity />
         </section>
 
-        <section className="content-section">
+        <section className="hero-section">
           <AboutConference />
         </section>
 
-        <section className="content-section">
+        <section className="hero-section">
           <ConferenceTopics />
         </section>
 
-        <section className="content-section">
+        <section className="hero-section">
           <ConferenceChair />
         </section>
 
-        <section id="speakers" className="content-section">
+        <section id="speakers" className="hero-section">
           <KeynoteSpeakers />
         </section>
 
-        <section id="dates" className="content-section">
+        <section id="dates" className="hero-section">
           <ImportantDates />
         </section>
 
-        <section className="content-section">
+        <section className="hero-section">
           <Conveners />
         </section>
 
-        <section id="contact" className="content-section">
+        <section id="contact" className="hero-section">
           <Contact />
         </section>
       </main>
-    </>
+    </div>
   )
 }

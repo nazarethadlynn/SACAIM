@@ -1,8 +1,14 @@
+// src/app/layout.tsx
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
 import './globals.css'
+import Footer from '@/components/Footer'
 
-export const metadata = {
-  title: 'ICAIH 2025',
-  description: 'International Conference on Artificial Intelligence in Healthcare',
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata: Metadata = {
+  title: 'ICAIH 2025 - International Conference on AI in Healthcare',
+  description: 'St. Aloysius Institute Conference',
 }
 
 export default function RootLayout({
@@ -12,7 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${inter.className} fixed-background-layout`}>
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }

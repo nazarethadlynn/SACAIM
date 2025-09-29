@@ -1,61 +1,138 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { MapPin, Phone } from 'lucide-react'
-
 const Contact = () => {
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-            Contact
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-8 shadow-lg"
-            >
-              <div className="flex items-start mb-4">
-                <MapPin className="text-blue-600 mt-1 mr-3" size={24} />
-                <div>
-                  <h3 className="text-xl font-bold text-blue-800 mb-2">Our Address</h3>
-                  <p className="text-gray-700">
-                    St Aloysius (Deemed to be University)<br />
-                    Institute of Management and IT<br />
-                    Beeri, Kotekar, Mangalore-575022
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-8 shadow-lg"
-            >
-              <div className="flex items-start">
-                <Phone className="text-green-600 mt-1 mr-3" size={24} />
-                <div>
-                  <h3 className="text-xl font-bold text-green-800 mb-2">Phone</h3>
-                  <p className="text-gray-700 mb-2">+91 94958 70533</p>
-                  <p className="text-gray-700">+91 98441 98603</p>
-                </div>
-              </div>
-            </motion.div>
+    <section style={{ 
+      backgroundColor: 'rgba(255, 255, 255, 0.7)', 
+      backdropFilter: 'blur(5px)',
+      padding: '4rem 1rem 0 1rem' 
+    }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        {/* Contact Header */}
+        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <h1 style={{ 
+            color: '#1d4ed8', 
+            fontSize: '2.5rem', 
+            fontWeight: 'bold', 
+            marginBottom: '0.5rem' 
+          }}>
+            CONTACT
+          </h1>
+          <div style={{ 
+            width: '4rem', 
+            height: '4px', 
+            backgroundColor: '#3b82f6', 
+            margin: '0 auto' 
+          }}></div>
+        </div>
+        
+        {/* Contact Cards - Side by Side with Semi-Transparent Background */}
+        <div style={{ 
+          display: 'flex', 
+          flexDirection: 'row', 
+          justifyContent: 'center', 
+          gap: '1.5rem', 
+          maxWidth: '1000px', 
+          margin: '0 auto 0 auto',
+          flexWrap: 'wrap'
+        }}>
+          {/* Address Card */}
+          <div style={{
+            flex: '1',
+            minWidth: '300px',
+            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            backdropFilter: 'blur(10px)',
+            padding: '2rem 1.5rem',
+            borderRadius: '0.5rem',
+            textAlign: 'center',
+            border: '1px solid rgba(229, 231, 235, 0.3)',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+          }}>
+            <div style={{ marginBottom: '1rem' }}>
+              <span style={{ fontSize: '2rem', color: '#ef4444' }}>📍</span>
+            </div>
+            <h3 style={{ 
+              color: '#374151', 
+              fontSize: '1rem', 
+              fontWeight: '600', 
+              marginBottom: '0.75rem' 
+            }}>
+              Our Address
+            </h3>
+            <p style={{ 
+              color: '#6b7280', 
+              fontSize: '0.875rem', 
+              lineHeight: '1.5' 
+            }}>
+              St Aloysius (Deemed to be University) Institute of Management and IT Beeri, Kotekar, Mangalore-574122
+            </p>
           </div>
-        </motion.div>
+
+          {/* Email Card */}
+          <div style={{
+            flex: '1',
+            minWidth: '300px',
+            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            backdropFilter: 'blur(10px)',
+            padding: '2rem 1.5rem',
+            borderRadius: '0.5rem',
+            textAlign: 'center',
+            border: '1px solid rgba(229, 231, 235, 0.3)',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+          }}>
+            <div style={{ marginBottom: '1rem' }}>
+              <span style={{ fontSize: '2rem', color: '#3b82f6' }}>📧</span>
+            </div>
+            <h3 style={{ 
+              color: '#374151', 
+              fontSize: '1rem', 
+              fontWeight: '600', 
+              marginBottom: '0.75rem' 
+            }}>
+              Email
+            </h3>
+            <p style={{ 
+              color: '#6b7280', 
+              fontSize: '0.875rem', 
+              lineHeight: '1.5' 
+            }}>
+              hemalatha@staloysius.ac.in
+            </p>
+          </div>
+
+          {/* Phone Card */}
+          <div style={{
+            flex: '1',
+            minWidth: '300px',
+            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            backdropFilter: 'blur(10px)',
+            padding: '2rem 1.5rem',
+            borderRadius: '0.5rem',
+            textAlign: 'center',
+            border: '1px solid rgba(229, 231, 235, 0.3)',
+            boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)'
+          }}>
+            <div style={{ marginBottom: '1rem' }}>
+              <span style={{ fontSize: '2rem', color: '#ec4899' }}>📞</span>
+            </div>
+            <h3 style={{ 
+              color: '#374151', 
+              fontSize: '1rem', 
+              fontWeight: '600', 
+              marginBottom: '0.75rem' 
+            }}>
+              Phone
+            </h3>
+            <div style={{ 
+              color: '#6b7280', 
+              fontSize: '0.875rem', 
+              lineHeight: '1.5' 
+            }}>
+              <p style={{ margin: '0 0 0.25rem 0' }}>+91 94835 76233</p>
+              <p style={{ margin: '0' }}>+91 98441 98623</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

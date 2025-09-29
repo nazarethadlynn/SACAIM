@@ -1,7 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
-
 const ConferenceChair = () => {
   const chairs = [
     {
@@ -17,42 +15,65 @@ const ConferenceChair = () => {
   ]
 
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+    <div className="centered-page-content">
+      <div className="black-overlay-content">
+        <h2 
+          className="text-4xl md:text-5xl font-bold text-center mb-12 text-white" 
+          style={{color: '#ffffff', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)'}}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-            Conference Chair
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {chairs.map((chair, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-8 text-center shadow-lg hover:shadow-xl transition-shadow"
+          CONFERENCE CHAIR
+        </h2>
+        
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {chairs.map((chair, index) => (
+            <div
+              key={index}
+              className="bg-black bg-opacity-40 backdrop-blur-sm rounded-lg p-8 text-center border border-gray-400 hover:bg-opacity-50 transition-all duration-300"
+              style={{
+                backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                borderColor: 'rgba(255, 255, 255, 0.3)',
+                backdropFilter: 'blur(8px)'
+              }}
+            >
+              <div 
+                className="w-24 h-24 rounded-full mx-auto mb-6 flex items-center justify-center bg-gradient-to-br from-blue-400 to-blue-600"
+                style={{
+                  background: 'linear-gradient(135deg, #60a5fa, #2563eb)'
+                }}
               >
-                <div className="w-24 h-24 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-3xl font-bold text-blue-800">
-                    {chair.name.split(' ')[1]?.[0] || chair.name[0]}
-                  </span>
-                </div>
-                <h3 className="text-2xl font-bold text-blue-800 mb-2">{chair.name}</h3>
-                <p className="text-lg text-blue-600 mb-2">{chair.title}</p>
-                <p className="text-gray-700">{chair.institution}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+                <span 
+                  className="text-3xl font-bold text-white" 
+                  style={{color: '#ffffff', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)'}}
+                >
+                  {chair.name.split(' ')[1]?.[0] || chair.name[0]}
+                </span>
+              </div>
+              
+              <h3 
+                className="text-2xl font-bold mb-3 text-blue-200" 
+                style={{color: '#bfdbfe', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)'}}
+              >
+                {chair.name}
+              </h3>
+              
+              <p 
+                className="text-lg mb-3 text-yellow-200 font-semibold" 
+                style={{color: '#fef08a', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)'}}
+              >
+                {chair.title}
+              </p>
+              
+              <p 
+                className="text-white font-medium leading-relaxed" 
+                style={{color: '#ffffff', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.6)'}}
+              >
+                {chair.institution}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
-    </section>
+    </div>
   )
 }
 
