@@ -1,4 +1,4 @@
-import Navigation from '@/components/Navigation'
+// src/app/page.tsx
 import HeroBanner from '@/components/sections/Hero/HeroBanner'
 import AboutUniversity from '@/components/AboutUniversity'
 import AboutConference from '@/components/AboutConference'
@@ -12,8 +12,6 @@ import Contact from '@/components/Contact'
 export default function Home() {
   return (
     <>
-      <Navigation />
-      
       <main>
         <section id="home" className="hero-section">
           <HeroBanner />

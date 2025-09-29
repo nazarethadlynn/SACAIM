@@ -565,108 +565,9 @@ button:focus, a:focus {
   }
 }
 
-/* Clean Top Navbar - NO COMPLEX STYLES */
-.top-navbar {
-  background: #3b82f6;
-  width: 100%;
-  padding: 12px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+/* ========== CREATIVE NAVIGATION STYLES - CLEAN TEXT BUTTONS ========== */
 
-/* Mobile hide for clean design */
-@media (max-width: 768px) {
-  nav.bg-blue-500 {
-    display: none;
-  }
-}
-
-/* Adjust hero section */
-.hero-section {
-  min-height: calc(100vh - 60px);
-}
-
-/* Clean Navigation Styles */
-.nav-btn {
-  background: rgba(255, 255, 255, 0.9);
-  color: #374151;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 6px;
-  font-weight: 500;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.nav-btn:hover {
-  background: white;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.for-authors-btn {
-  background: #1e40af;
-  color: white;
-  padding: 8px 20px;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  box-shadow: 0 2px 4px rgba(30, 64, 175, 0.3);
-}
-
-.for-authors-btn:hover {
-  background: #1e3a8a;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.4);
-}
-
-/* Remove default button styles */
-button {
-  outline: none;
-  border: none;
-}
-
-button:focus {
-  outline: 2px solid rgba(59, 130, 246, 0.5);
-  outline-offset: 2px;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-  nav .flex {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-  }
-  
-  .nav-btn,
-  .for-authors-btn {
-    font-size: 13px;
-    padding: 6px 12px;
-  }
-}
-
-@media (max-width: 640px) {
-  nav {
-    padding: 12px 0;
-  }
-  
-  .nav-btn,
-  .for-authors-btn {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
-}
-
-/* ========== CREATIVE NAVIGATION STYLES - ADDED FOR NEW DESIGN ========== */
-
-/* Override navigation background for creative design */
+/* Main Creative Navigation */
 .creative-nav {
   position: sticky !important;
   top: 0 !important;
@@ -734,8 +635,8 @@ button:focus {
 .logo-text {
   color: white;
   font-weight: 800;
-  font-size: 16px;
-  letter-spacing: 1px;
+  font-size: 14px; /* Adjusted for SACAIM */
+  letter-spacing: 0.5px;
 }
 
 .brand-info {
@@ -765,39 +666,89 @@ button:focus {
   flex-wrap: wrap;
 }
 
-.nav-item {
+/* ========== COMPLETELY CLEAN NAVIGATION ITEMS - NO BACKGROUNDS ========== */
+
+/* Clean Navigation Items - NO BACKGROUNDS AT ALL */
+.nav-item-clean {
   position: relative;
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 12px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
+  background: transparent !important; /* COMPLETELY TRANSPARENT */
+  border: none !important;
+  outline: none !important;
+  border-radius: 0; /* NO ROUNDED CORNERS */
   color: white;
   font-weight: 500;
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  overflow: hidden;
+  backdrop-filter: none !important; /* NO BLUR EFFECT */
+  overflow: visible;
+  box-shadow: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
 }
 
-.nav-item:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+.nav-item-clean:hover {
+  background: rgba(255, 255, 255, 0.1) !important; /* VERY SUBTLE HOVER */
+  transform: translateY(-1px); /* MINIMAL MOVEMENT */
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  border-radius: 6px; /* ONLY ON HOVER */
 }
 
-.nav-item.active {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-  transform: scale(1.05);
+.nav-item-clean:focus {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 6px;
 }
 
-.nav-icon {
-  font-size: 16px;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+.nav-item-clean.active {
+  background: rgba(255, 255, 255, 0.15) !important; /* VERY SUBTLE ACTIVE */
+  transform: none;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 6px;
+}
+
+/* Remove any default button styling - COMPLETELY INVISIBLE BY DEFAULT */
+.nav-item-clean, .nav-item-clean:hover, .nav-item-clean:focus, .nav-item-clean:active {
+  border: none !important;
+  outline: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Override any global button styles for nav items */
+button.nav-item-clean {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+button.nav-item-clean:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: none !important;
+  outline: none !important;
+  border-radius: 6px !important;
+}
+
+button.nav-item-clean:focus {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 6px !important;
 }
 
 .nav-label {
@@ -805,60 +756,56 @@ button:focus {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* Remove the glow effect completely */
 .nav-glow {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  display: none !important;
 }
 
-.nav-item:hover .nav-glow {
-  opacity: 1;
-}
-
-/* Special For Authors Button */
+/* Also update the For Authors button to be less prominent */
 .for-authors-special {
   position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 28px;
+  padding: 12px 24px; /* Slightly smaller */
   background: linear-gradient(135deg, #f59e0b, #d97706);
-  border: none;
+  border: none !important;
+  outline: none !important;
   border-radius: 20px;
   color: white;
-  font-weight: 700;
-  font-size: 15px;
+  font-weight: 600; /* Slightly less bold */
+  font-size: 14px; /* Slightly smaller */
   cursor: pointer;
-  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3) !important; /* Less shadow */
+  transition: all 0.3s ease; /* Faster transition */
   overflow: hidden;
   margin-left: 16px;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
 }
 
 .for-authors-special:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 15px 35px rgba(245, 158, 11, 0.6);
+  transform: translateY(-2px) scale(1.02); /* Less dramatic */
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4) !important; /* Less shadow */
   background: linear-gradient(135deg, #f97316, #ea580c);
+  border: none !important;
+  outline: none !important;
 }
 
-.authors-icon {
-  font-size: 18px;
-  animation: sparkle 2s ease-in-out infinite;
+.for-authors-special:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4) !important;
 }
 
 .authors-text {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* Remove pulse animation */
 .authors-pulse {
-  position: absolute;
-  inset: -4px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.3), transparent);
-  border-radius: 20px;
-  animation: pulse 2s ease-in-out infinite;
-  z-index: -1;
+  display: none !important;
 }
 
 /* Creative Background Elements */
@@ -907,30 +854,20 @@ button:focus {
   100% { transform: rotate(360deg); }
 }
 
-@keyframes sparkle {
-  0%, 100% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.2) rotate(10deg); }
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0; transform: scale(0.8); }
-  50% { opacity: 1; transform: scale(1.1); }
-}
-
 /* Creative Navigation Mobile Responsive */
 @media (max-width: 1024px) {
   .nav-items {
     gap: 6px;
   }
   
-  .nav-item {
+  .nav-item-clean {
     padding: 10px 16px;
     font-size: 13px;
   }
   
   .for-authors-special {
-    padding: 12px 20px;
-    font-size: 14px;
+    padding: 10px 18px;
+    font-size: 13px;
     margin-left: 8px;
   }
 }
@@ -954,4 +891,21 @@ button:focus {
   .for-authors-special {
     margin-left: 0;
   }
+}
+
+/* Remove default button styles - GLOBAL OVERRIDE FOR NAV */
+button {
+  outline: none;
+  border: none;
+}
+
+button:focus {
+  outline: 2px solid rgba(59, 130, 246, 0.5);
+  outline-offset: 2px;
+}
+
+/* Override focus for nav buttons specifically */
+.nav-item-clean:focus,
+.for-authors-special:focus {
+  outline: none !important;
 }
