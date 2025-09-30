@@ -6,13 +6,7 @@
 /* Reset/box-sizing */
 *, *::before, *::after { box-sizing: border-box; }
 
-<<<<<<< HEAD
-/* FIXED BACKGROUND FOR ENTIRE APPLICATION */
-=======
-/* ========== GLOBAL BODY PADDING FOR FIXED NAV ========== */
-
-/* GLOBAL BACKGROUND FOR ENTIRE PAGE */
->>>>>>> 3cf549e27ab34f05064e660f46240743b6845aec
+/* FIXED BACKGROUND FOR ENTIRE APPLICATION + GLOBAL BODY PADDING FOR FIXED NAV */
 html, body {
   height: 100%;
   margin: 0;
@@ -27,7 +21,7 @@ html, body {
 .fixed-background-layout {
   position: relative;
   min-height: 100vh;
-  background-image: url('https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+  background-image: url('/images/bg/bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -176,29 +170,20 @@ html, body {
   font-weight: 700;
 }
 
-/* UPDATED: Hero section with transparent background */
+/* UPDATED: Hero section - merged both versions */
 .hero-section {
-<<<<<<< HEAD
-  /* Remove background-image from here since it's now on body */
-  background: transparent !important;
-  min-height: calc(100vh - 72px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 4rem;
-=======
-  /* move the image here instead of on html/body */
+  /* Remove background-image from here since it's now on body, but keep fallback */
   background-image: url('https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* optional */
+  background: transparent !important; /* Primary transparent setting */
   min-height: calc(100vh - 88px) !important; /* Adjusted for fixed nav */
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 2rem !important; /* Reduced since nav is fixed */
->>>>>>> 3cf549e27ab34f05064e660f46240743b6845aec
 }
 
 /* UPDATED: Transparent center content - NO WHITE BACKGROUND */
@@ -433,6 +418,14 @@ button:hover {
   
   .sm\:flex-row {
     flex-direction: row;
+  }
+  
+  .text-content-overlay {
+    padding: 1.5rem 2rem;
+  }
+  
+  .text-content-light {
+    padding: 1rem 1.5rem;
   }
 }
 
@@ -691,15 +684,6 @@ button:focus, a:focus {
   .content-section:hover {
     transform: none;
   }
-
-<<<<<<< HEAD
-  .text-content-overlay {
-    padding: 1.5rem 2rem;
-  }
-  
-  .text-content-light {
-    padding: 1rem 1.5rem;
-  }
 }
 
 /* Clean Navigation Styles */
@@ -781,12 +765,9 @@ button:focus {
   }
 }
 
-/* Creative Navigation Styles */
-=======
 /* ========== FIXED NAVIGATION BAR - STAYS AT TOP ========== */
 
 /* Main Creative Navigation - FIXED POSITION */
->>>>>>> 3cf549e27ab34f05064e660f46240743b6845aec
 .creative-nav {
   position: fixed !important; /* CHANGED FROM STICKY TO FIXED */
   top: 0 !important;

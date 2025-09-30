@@ -2,7 +2,7 @@
 
 const ImportantDates = () => {
   const dates = [
-    { event: "Last Date For Paper Submission", date: "TBA" },
+    { event: "Last Date For Paper Submission", date: "31st January 2025" },
     { event: "Notification of Acceptance", date: "2nd March 2025" },
     { event: "Camera Ready Paper Submission", date: "5th March 2025" },
     { event: "Release of Presentation Schedule", date: "10th March 2025" },
@@ -10,95 +10,136 @@ const ImportantDates = () => {
   ]
 
   return (
-    <div className="centered-page-content">
-      <div className="black-overlay-content">
+    <div className="black-overlay-content">
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+        
+        {/* Title */}
         <h2 
-          className="text-4xl md:text-5xl font-bold text-center mb-12 text-white" 
-          style={{color: '#ffffff', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)'}}
+          style={{
+            fontSize: '2.5rem',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            marginBottom: '3rem',
+            color: '#ffffff',
+            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+            borderBottom: '3px solid #1e40af',
+            display: 'inline-block',
+            width: '100%',
+            paddingBottom: '0.5rem'
+          }}
         >
           IMPORTANT DATES
         </h2>
         
-        <div className="max-w-4xl mx-auto">
-          <div 
-            className="rounded-lg p-8 shadow-lg"
-            style={{
-              background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4))',
-              backdropFilter: 'blur(10px)',
-              border: '1px solid rgba(255, 255, 255, 0.2)'
-            }}
-          >
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr 
-                    className="border-b-2"
-                    style={{borderBottomColor: 'rgba(96, 165, 250, 0.6)'}}
+        {/* White Transparent Table Container */}
+        <div 
+          style={{ 
+            backgroundColor: 'rgba(255, 255, 255, 0.15)', // Light white transparency
+            borderRadius: '12px', 
+            overflow: 'hidden', 
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
+            backdropFilter: 'blur(20px)',
+            border: '1px solid rgba(255, 255, 255, 0.2)'
+          }}
+        >
+          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+            <thead>
+              <tr style={{ backgroundColor: 'rgba(30, 64, 175, 0.8)', color: 'white' }}>
+                <th 
+                  style={{
+                    padding: '1rem',
+                    textAlign: 'center',
+                    fontSize: '1.25rem',
+                    fontWeight: 'bold',
+                    borderRight: '1px solid rgba(255, 255, 255, 0.2)',
+                    textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)'
+                  }}
+                >
+                  EVENTS
+                </th>
+                <th 
+                  style={{
+                    padding: '1rem',
+                    textAlign: 'center',
+                    fontSize: '1.25rem',
+                    fontWeight: 'bold',
+                    textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)'
+                  }}
+                >
+                  DATES
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {dates.map((item, index) => (
+                <tr
+                  key={index}
+                  style={{
+                    borderBottom: index < dates.length - 1 ? '1px solid rgba(255, 255, 255, 0.2)' : 'none',
+                    transition: 'background-color 0.2s',
+                    backgroundColor: 'transparent'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.2)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'transparent'
+                  }}
+                >
+                  <td 
+                    style={{
+                      padding: '1rem',
+                      textAlign: 'left',
+                      fontSize: '1rem',
+                      fontWeight: '600',
+                      color: '#ffffff',
+                      borderRight: '1px solid rgba(255, 255, 255, 0.2)',
+                      textShadow: '1px 1px 2px rgba(0, 0, 0, 0.7)'
+                    }}
                   >
-                    <th 
-                      className="text-center py-4 px-4 text-xl font-bold"
-                      style={{color: '#bfdbfe', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)'}}
-                    >
-                      📅 Events
-                    </th>
-                    <th 
-                      className="text-center py-4 px-4 text-xl font-bold"
-                      style={{color: '#bfdbfe', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)'}}
-                    >
-                      📆 Dates
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {dates.map((item, index) => (
-                    <tr
-                      key={index}
-                      className="border-b hover:bg-opacity-50 transition-colors"
-                      style={{
-                        borderBottomColor: 'rgba(255, 255, 255, 0.1)'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)'
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = 'transparent'
-                      }}
-                    >
-                      <td 
-                        className="py-4 px-4 font-medium text-center"
-                        style={{color: '#ffffff', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.6)'}}
-                      >
-                        {item.event}
-                      </td>
-                      <td 
-                        className="py-4 px-4 font-semibold text-center"
-                        style={{color: '#fef08a', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)'}}
-                      >
-                        {item.date}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-          
-          <div 
-            className="mt-8 p-6 rounded-lg border-l-4"
-            style={{
-              backgroundColor: 'rgba(0, 0, 0, 0.3)',
-              borderLeftColor: '#10b981',
-              backdropFilter: 'blur(6px)'
-            }}
-          >
-            <p 
-              className="text-center text-lg font-medium"
-              style={{color: '#ffffff', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.6)'}}
-            >
-              📢 <span className="text-green-200 font-semibold" style={{color: '#bbf7d0', textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)'}}>Important Notice:</span> All deadlines are strictly adhered to. Please ensure timely submissions to avoid any inconvenience.
-            </p>
-          </div>
+                    {item.event}
+                  </td>
+                  <td 
+                    style={{
+                      padding: '1rem',
+                      textAlign: 'center',
+                      fontSize: '1rem',
+                      fontWeight: '700',
+                      color: item.event === "Last Date For Paper Submission" ? '#fecaca' : '#bbf7d0',
+                      textShadow: '1px 1px 2px rgba(0, 0, 0, 0.7)'
+                    }}
+                  >
+                    {item.date}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
+
+        {/* Important Notice - White Transparent */}
+        <div 
+          style={{
+            marginTop: '2rem',
+            padding: '1rem',
+            backgroundColor: 'rgba(255, 255, 255, 0.15)',
+            border: '1px solid rgba(255, 255, 255, 0.3)',
+            borderRadius: '8px',
+            textAlign: 'center',
+            backdropFilter: 'blur(15px)'
+          }}
+        >
+          <p style={{ 
+            color: '#ffffff', 
+            fontSize: '1rem', 
+            fontWeight: '500', 
+            margin: 0,
+            textShadow: '1px 1px 2px rgba(0, 0, 0, 0.7)'
+          }}>
+            📢 <strong>Important Notice:</strong> All deadlines are strictly adhered to. Please ensure timely submissions to avoid any inconvenience.
+          </p>
+        </div>
+
       </div>
     </div>
   )
