@@ -1,7 +1,7 @@
 import HeroBanner from '@/components/sections/Hero/HeroBanner'
 import AboutUniversity from '@/components/AboutUniversity'
 import AboutConference from '@/components/AboutConference'
-// Remove this import: import ConferenceTopics from '@/components/ConferenceTopics'
+// Removed import ConferenceTopics from '@/components/ConferenceTopics'
 import ConferenceChair from '@/components/ConferenceChair'
 import KeynoteSpeakers from '@/components/KeynoteSpeakers'
 import ImportantDates from '@/components/ImportantDates'
@@ -24,21 +24,17 @@ export default function Home() {
           <AboutConference />
         </section>
 
-        {/* Remove this section since it's now merged above:
-        <section className="content-section">
-          <ConferenceTopics />
-        </section>
-        */}
-
+        {/* ConferenceTopics section removed as per your comment */}
+        
         <section className="content-section">
           <ConferenceChair />
         </section>
 
-        <section id="speakers" className="content-section">
+        <section id="keynote-speakers" className="content-section">
           <KeynoteSpeakers />
         </section>
 
-        <section id="dates" className="content-section">
+        <section id="important-dates" className="content-section">
           <ImportantDates />
         </section>
 
