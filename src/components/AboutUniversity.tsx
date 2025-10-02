@@ -1,6 +1,14 @@
 'use client'
 
+import { useState, useEffect } from 'react'
+
 const AboutUniversity = () => {
+  const [fadeIn, setFadeIn] = useState(false)
+
+  useEffect(() => {
+    setFadeIn(true)
+  }, [])
+
   return (
     <section
       style={{
@@ -19,7 +27,7 @@ const AboutUniversity = () => {
         overflow: 'hidden',
       }}
     >
-      {/* Full-width overlay */}
+      {/* Full-width overlay with fade-in */}
       <div
         style={{
           position: 'absolute',
@@ -30,10 +38,12 @@ const AboutUniversity = () => {
           width: '100%',
           height: '100%',
           backgroundColor: 'rgba(20, 30, 48, 0.85)',
+          opacity: fadeIn ? 1 : 0,
+          transition: 'opacity 1s ease-in-out',
           zIndex: 0,
         }}
       />
-      {/* Centered content */}
+      {/* Centered content with fade-in */}
       <div
         style={{
           position: 'relative',
@@ -48,6 +58,8 @@ const AboutUniversity = () => {
           textShadow: '1px 1px 2px rgba(0,0,0,0.6)',
           padding: '2.5rem 1.5rem',
           margin: '0 auto 0  auto',
+          opacity: fadeIn ? 1 : 0,
+          transition: 'opacity 1.5s ease-in-out',
         }}
       >
         <h2

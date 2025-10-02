@@ -3,20 +3,20 @@
 const Hero = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center">
-      {/* Background Image */}
+      {/* Fixed Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
+        className="fixed inset-0 bg-cover bg-center z-0"
+        style={{ 
+          backgroundImage: "url('https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')",
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed',
         }}
       />
+      {/* Blue Overlay */}
+      <div className="fixed inset-0 bg-blue-800/70 z-10" />
       
-      {/* Blue Overlay - EXACT match */}
-      <div className="absolute inset-0 bg-blue-800/70" />
-      
-      {/* Content - EXACT positioning */}
-      <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
-        {/* Title - EXACT typography */}
+      {/* Content */}
+      <div className="relative z-20 text-center text-white px-4 max-w-6xl mx-auto">
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
           INTERNATIONAL CONFERENCE ON
           <br />
@@ -27,22 +27,18 @@ const Hero = () => {
           IN HEALTH CARE
         </h1>
 
-        {/* Conference Code - EXACT styling */}
         <div className="text-4xl md:text-5xl font-bold mb-8 text-blue-300">
           (ICAIH-2025)
         </div>
 
-        {/* Institute Name - EXACT match */}
         <div className="text-xl md:text-2xl font-semibold mb-6 max-w-4xl mx-auto">
           ST ALOYSIUS (DEEMED TO BE UNIVERSITY) INSTITUTE OF MANAGEMENT AND IT
         </div>
 
-        {/* Date - EXACT styling */}
         <div className="text-2xl md:text-3xl font-bold mb-12">
           20TH & 21ST, MARCH, 2025
         </div>
 
-        {/* Springer Logo - EXACT match */}
         <div className="bg-white rounded-lg p-6 inline-block shadow-xl">
           <div className="flex items-center space-x-4">
             <div className="flex items-center">
@@ -60,7 +56,6 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Scroll Down Arrow - EXACT match */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
           <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center animate-bounce">
             <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
