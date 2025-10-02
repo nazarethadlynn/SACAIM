@@ -14,7 +14,7 @@ const AboutUniversity = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '2rem 0',
+        padding: 0,
         boxSizing: 'border-box',
         overflow: 'hidden',
       }}
@@ -47,7 +47,7 @@ const AboutUniversity = () => {
           lineHeight: 1.6,
           textShadow: '1px 1px 2px rgba(0,0,0,0.6)',
           padding: '2.5rem 1.5rem',
-          margin: '0 auto',
+          margin: '0 auto 0  auto',
         }}
       >
         <h2
@@ -93,7 +93,7 @@ const AboutUniversity = () => {
           It encompasses a range of IT courses, including MCA, MSc (Software Technology), MSc (Big Data Analytics), MSc (Data Science), and MSc (Bioinformatics).
         </p>
 
-        <p style={{ marginTop: '1rem' }}>
+        <p style={{ marginTop: '1rem', marginBottom: 0 }}>
           At AIMIT, our priority is our students.
           Each of our programs is meticulously crafted with your career advancement in mind.
           We provide outstanding education, ample opportunities to interact with industry professionals, top-notch facilities, and access to a continuously expanding alumni network.

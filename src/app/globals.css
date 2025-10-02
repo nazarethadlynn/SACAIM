@@ -1,7 +1,6 @@
 /* src/app/globals.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Removed Tailwind directives due to unknown at-rule error */
+/* If you are using Tailwind, ensure your build tool is configured correctly. */
 
 /* Reset/box-sizing */
 *, *::before, *::after { box-sizing: border-box; }
@@ -14,7 +13,7 @@ html, body {
   font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-top: 88px !important; /* Height of navigation bar */
+  padding-top: 50px !important; /* Height of navigation bar */
 }
 
 /* Fixed background layout for body */
@@ -183,7 +182,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 2rem !important; /* Reduced since nav is fixed */
+  padding-top: 1rem !important; /* Reduced since nav is fixed */
 }
 
 /* UPDATED: Transparent center content - NO WHITE BACKGROUND */
