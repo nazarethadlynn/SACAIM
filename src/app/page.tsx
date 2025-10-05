@@ -7,6 +7,7 @@ import ImportantDates from '@/components/ImportantDates'
 import Conveners from '@/components/Conveners'
 import Contact from '@/components/Contact'
 
+
 export default function Home() {
   return (
     <div className="scrollable-content" style={{ margin: 0, padding: 0 }}>

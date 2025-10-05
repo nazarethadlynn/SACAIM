@@ -57,7 +57,7 @@ const HeroBanner = () => {
       <div className={`relative z-20 hero-content center-content transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
         {/* Enhanced ICAIH Logo */}
         <div className={`inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-400/30 to-blue-400/30 rounded-full mb-6 border-2 border-green-400 backdrop-blur-sm transition-all duration-700 hover:scale-110 hover:rotate-12 ${isVisible ? 'scale-100' : 'scale-0'}`}>
-          <div className="text-green-400 text-3xl font-bold animate-pulse">I</div>
+         <div className="text-green-400 text-3xl font-bold animate-pulse"></div>
         </div>
         
         {/* Animated title with typewriter effect */}
@@ -116,19 +116,6 @@ const HeroBanner = () => {
         </div>
       </div>
       
-      {/* Enhanced scroll indicator */}
-      <div className="scroll-indicator">
-        <button 
-          onClick={scrollToNext}
-          className="scroll-arrow group hover:scale-125 transition-all duration-300"
-        >
-          <div className="w-12 h-12 border-2 border-white/60 rounded-full flex items-center justify-center group-hover:border-white group-hover:bg-white/10 transition-all duration-300">
-            <svg width="20" height="20" fill="white" viewBox="0 0 24 24" className="group-hover:translate-y-1 transition-transform duration-300">
-              <path d="M7 10l5 5 5-5z"/>
-            </svg>
-          </div>
-        </button>
-      </div>
 
       {/* Floating elements */}
       <div className="absolute top-20 left-10 w-4 h-4 bg-green-400/30 rounded-full animate-ping"></div>

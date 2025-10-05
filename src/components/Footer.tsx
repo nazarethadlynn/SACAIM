@@ -1,5 +1,7 @@
 'use client';
 
+import { FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+
 const Footer = () => {
   return (
     <footer
@@ -50,20 +52,30 @@ const Footer = () => {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '0.5rem' }}>
-            <div
-              style={{
-                width: '26px',
-                height: '26px',
-                background: 'linear-gradient(135deg,#1d4ed8,#3b82f6)',
-                borderRadius: '7px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginRight: '0.5rem',
-              }}
-            >
-              <span style={{ color: '#fff', fontSize: '1rem', fontWeight: 'bold' }}>🎓</span>
-            </div>
+          <div
+    style={{
+      width: '26px',
+      height: '26px',
+      background: 'linear-gradient(135deg,#1d4ed8,#3b82f6)',
+      borderRadius: '7px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginRight: '0.5rem',
+      overflow: 'hidden',
+    }}
+  >
+    <img
+      src="public/images/logo/icaih-logo.png"
+      alt="University Logo"
+      style={{
+        width: '82%',
+        height: '82%',
+        objectFit: 'contain',
+        display: 'block'
+      }}
+    />
+  </div>
             <div>
               <h3 style={{ color: '#1d4ed8', fontSize: '0.95rem', fontWeight: '800', margin: 0 }}>ST ALOYSIUS</h3>
               <p style={{ color: '#1d4ed8', fontSize: '0.65rem', margin: 0, fontWeight: '600', opacity: 0.8 }}>
@@ -97,48 +109,87 @@ const Footer = () => {
             </p>
           </div>
           <div style={{ textAlign: 'center', marginBottom: '0.4rem' }}>
-            <p style={{ color: '#374151', margin: 0, fontWeight: '500' }}>
-              <span style={{ fontWeight: '700', color: '#1d4ed8' }}>Phone:</span> +91 8242695641/42
-            </p>
-            <p style={{ color: '#374151', margin: 0, fontWeight: '500' }}>
-              <span style={{ fontWeight: '700', color: '#1d4ed8' }}>Email:</span>{' '}
-              <a href="mailto:hemalatha@staloysius.ac.in" style={{ color: '#1d4ed8', textDecoration: 'none' }}>
-                hemalatha@staloysius.ac.in
-              </a>
-            </p>
-          </div>
+  <p style={{ color: '#374151', margin: 0, fontWeight: '500' }}>
+    <span style={{ fontWeight: '700', color: '#1d4ed8' }}>Phone:</span>{' '}
+    91 8242286881/82
+  </p>
+  <p style={{ color: '#374151', margin: 0, fontWeight: '500' }}>
+    <span style={{ fontWeight: '700', color: '#1d4ed8' }}>Email:</span>{' '}
+    <a href="mailto:hemalatha@staloysius.ac.in" style={{ color: '#1d4ed8', textDecoration: 'none' }}>
+      hemalatha@staloysius.ac.in
+    </a>
+  </p>
+</div>
+
+          {/* Social Icons */}
           <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5rem' }}>
-            {['f', '📷', 'in'].map((icon, ix) => (
-              <div
-                key={ix}
-                style={{
-                  width: '22px',
-                  height: '22px',
-                  background: 'linear-gradient(135deg, #475569, #64748b)',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '0.7rem',
-                  color: '#fff',
-                }}
-              >
-                {icon}
-              </div>
-            ))}
+            <a
+              href=" https://x.com/st_aimit?t=8vD5a3216gthzf7E3u0ycw&s=08" target="_blank" rel="noopener noreferrer"
+              style={{
+                width: '22px',
+                height: '22px',
+                background: 'linear-gradient(135deg, #475569, #64748b)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+              <FaTwitter color="#fff" size={12} />
+            </a>
+            <a
+              href="https://www.instagram.com/staloysius_aimitcentre?igsh=MWx6N2tqbWM3ZmxmOA==" target="_blank" rel="noopener noreferrer"
+              style={{
+                width: '22px',
+                height: '22px',
+                background: 'linear-gradient(135deg, #475569, #64748b)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+              <FaInstagram color="#fff" size={12} />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/aimitbeeri/" target="_blank" rel="noopener noreferrer"
+              style={{
+                width: '22px',
+                height: '22px',
+                background: 'linear-gradient(135deg, #475569, #64748b)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+              <FaLinkedin color="#fff" size={12} />
+            </a>
           </div>
         </div>
+
         {/* Middle Section - Links */}
         <div style={{ paddingLeft: '1rem' }}>
           <div style={{ marginBottom: '1rem' }}>
-            <h4 style={{ color: '#fff', fontSize: '0.93rem', fontWeight: '700', marginBottom: '0.7rem', borderBottom: '2px solid #60a5fa', paddingBottom: '0.25rem' }}>
+            <h4
+              style={{
+                color: '#fff',
+                fontSize: '0.93rem',
+                fontWeight: '700',
+                marginBottom: '0.7rem',
+                borderBottom: '2px solid #60a5fa',
+                paddingBottom: '0.25rem',
+              }}
+            >
               Useful Links
             </h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-              {['Home', 'About', 'Key Speakers', 'Important Dates'].map((text, ix) => (
+              {[
+                { text: 'Home', id: 'home' },
+                { text: 'About', id: 'about' },
+                { text: 'Key Speakers', id: 'keynote-speakers' },
+                { text: 'Important Dates', id: 'important-dates' },
+              ].map((link, ix) => (
                 <li key={ix} style={{ marginBottom: '0.35rem' }}>
                   <a
-                    href="#"
+                    href={`#${link.id}`}
                     style={{
                       color: '#f1f5f9',
                       textDecoration: 'none',
@@ -148,22 +199,47 @@ const Footer = () => {
                       alignItems: 'center',
                     }}
                   >
-                    <span style={{ marginRight: '0.5rem', color: '#60a5fa', fontSize: '0.75rem', fontWeight: 'bold' }}>▶</span>
-                    {text}
+                    <span
+                      style={{
+                        marginRight: '0.5rem',
+                        color: '#60a5fa',
+                        fontSize: '0.75rem',
+                        fontWeight: 'bold',
+                      }}
+                    >
+                      ▶
+                    </span>
+                    {link.text}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <h4 style={{ color: '#fff', fontSize: '0.93rem', fontWeight: '700', marginBottom: '0.7rem', borderBottom: '2px solid #34d399', paddingBottom: '0.25rem' }}>
+            <h4
+              style={{
+                color: '#fff',
+                fontSize: '0.93rem',
+                fontWeight: '700',
+                marginBottom: '0.7rem',
+                borderBottom: '2px solid #34d399',
+                paddingBottom: '0.25rem',
+              }}
+            >
               Featured Links
             </h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-              {['Gallery', 'SACAIM 2025', 'Our Achievements', 'Admissions'].map((text, ix) => (
+              {[
+                { text: 'Gallery', id: 'gallery', external: true, url: 'https://www.aimit.edu.in/' },
+                { text: 'SACAIM 2025', id: 'sacaim-2025' },
+                { text: 'Our Achievements', id: 'achievements' },
+                { text: 'Admissions', id: 'admissions', external: true, url: 'https://www.aimit.edu.in/admission/' },
+              ].map((link, ix) => (
                 <li key={ix} style={{ marginBottom: '0.35rem' }}>
                   <a
-                    href="#"
+                    href={link.external ? link.url : `#${link.id}`}
+                    target={link.external ? '_blank' : undefined}
+                    rel={link.external ? 'noopener noreferrer' : undefined}
                     style={{
                       color: '#f1f5f9',
                       textDecoration: 'none',
@@ -173,16 +249,35 @@ const Footer = () => {
                       alignItems: 'center',
                     }}
                   >
-                    <span style={{ marginRight: '0.5rem', color: '#34d399', fontSize: '0.75rem', fontWeight: 'bold' }}>▶</span>
-                    {text}
+                    <span
+                      style={{
+                        marginRight: '0.5rem',
+                        color: '#34d399',
+                        fontSize: '0.75rem',
+                        fontWeight: 'bold',
+                      }}
+                    >
+                      ▶
+                    </span>
+                    {link.text}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
         </div>
+
         {/* Right Section - Real-time Google Map */}
-        <div style={{ width: '100%', minWidth: '220px', height: '220px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <div
+          style={{
+            width: '100%',
+            minWidth: '220px',
+            height: '220px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
           <iframe
             title="St Aloysius Institute of Management and IT Map"
             src="https://www.google.com/maps?q=St+Aloysius+Institute+of+Management+and+Information+Technology+Beeri+Kotekar+Mangaluru&hl=en&z=16&output=embed"
